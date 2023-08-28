@@ -1,14 +1,17 @@
+import { Image } from "antd";
 import React from "react";
 
 const Cart = ({ click }: any) => {
   return (
-    <div className="p-4 md:w-1/3">
+    <div>
       <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-        <img
-          className="lg:h-48 md:h-36 w-full object-cover object-center"
-          src="https://dummyimage.com/720x400"
+        <Image
+          height={300}
+          width={"100%"}
+          className="w-full object-cover object-center"
+          src="../../public/images/naushnik.jpg"
           alt="blog"
-        />
+        ></Image>
         <div className="p-6">
           <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
             CATEGORY

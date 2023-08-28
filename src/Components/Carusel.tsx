@@ -4,36 +4,54 @@ import { Carousel, Radio } from "antd";
 import type { DotPosition } from "antd/es/carousel";
 
 const contentStyle: React.CSSProperties = {
+  width: "100%",
+  objectFit: "cover",
   height: "260px",
-  color: "#fff",
-  lineHeight: "160px",
-  textAlign: "center",
-  background: "#00b3a8",
 };
 
 const Carusel: React.FC = () => {
   return (
-    <>
+    <div className="flex gap-2">
       <Carousel
+        style={{ width: "700px" }}
         dotPosition={"bottom"}
         autoplay
         autoplaySpeed={2000}
         pauseOnDotsHover
       >
         <div>
-          <h3 style={contentStyle}>1</h3>
+          <img
+            style={contentStyle}
+            src="../../public/images/Carusel-1.jpg"
+            alt=""
+          />
         </div>
         <div>
-          <h3 style={contentStyle}>2</h3>
+          <img
+            style={contentStyle}
+            src="../../public/images/Carusel-2.jpg"
+            alt=""
+          />
         </div>
         <div>
-          <h3 style={contentStyle}>3</h3>
+          <img
+            style={contentStyle}
+            src="../../public/images/Carusel-3.jpg"
+            alt=""
+          />
         </div>
         <div>
-          <h3 style={contentStyle}>4</h3>
+          <img
+            style={contentStyle}
+            src="../../public/images/Carusel-4.jpg"
+            alt=""
+          />
         </div>
       </Carousel>
-    </>
+      <div style={{ width: "50%", display: "inline-block" }}>
+        <img src="../../public/images/konstavar.jpg" alt="" />
+      </div>
+    </div>
   );
 };
 

@@ -20,20 +20,20 @@ const Categ = () => {
               <img
                 className="w-full object-cover h-full object-center block"
                 alt="gallery"
-                src="../../public/images/baseyn.jpg"
+                src="../../public/images/Carusel-2.jpg"
               />
             </div>
             <div className="md:p-2 p-1 w-1/2">
               <img
                 className="w-full object-cover h-full object-center block"
-                src="../../public/images/dress.jpg"
+                src="../../public/images/Carusel-1.jpg"
                 alt="gallery"
               />
             </div>
             <div className="md:p-2 p-1 w-full">
               <img
-                src="../../public/images/bag.jpg"
-                className="w-full h-full object-cover object-center block"
+                src="../../public/images/netupi.jpg"
+                className="w-full h-full  object-cover object-center block"
                 alt=""
               />
             </div>
@@ -48,7 +48,7 @@ const Categ = () => {
             </div>
             <div className="md:p-2 p-1 w-1/2">
               <img
-                src="../../public/images/dress.jpg"
+                src="../../public/images/tech.jpg"
                 alt="gallery"
                 className="w-full object-cover h-full object-center block"
               />
