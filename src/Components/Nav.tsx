@@ -2,9 +2,28 @@ import { Link } from "react-router-dom";
 import Top from "./Top";
 import Search from "antd/es/input/Search";
 import Bottom from "./Bottom";
+import Madal from "./madal";
+import { useEffect, useState } from "react";
+import { Button, Input } from "antd";
+import { instance } from "../Utils";
+import { useForm, SubmitHandler, Controller } from "react-hook-form";
+import { IFormInput } from "../Interface";
 
 const Nav = () => {
   const onSearch = (value: string) => console.log(value);
+  const [showmadal, setshowmadal] = useState(false);
+
+  const { control, handleSubmit } = useForm({
+    defaultValues: {
+      name: "",
+      email: "",
+      password: "",
+    },
+  });
+
+  const onSubmit: SubmitHandler<IFormInput> = (data) => {
+    instance.post(`/register`, data).then((res) => console.log(res));
+  };
 
   return (
     <div>
@@ -40,7 +59,10 @@ const Nav = () => {
               <i className="fa-solid fa-cart-shopping"></i>
               <p>Savatcha</p>
             </div>
-            <div className="flex flex-col items-center">
+            <div
+              onClick={() => setshowmadal(true)}
+              className="flex flex-col items-center cursor-pointer"
+            >
               <i className="fa-solid fa-user"></i>
               <p>Profil</p>
             </div>
@@ -48,6 +70,49 @@ const Nav = () => {
         </div>
         <Bottom />
       </div>
+      <Madal handleCancel={() => setshowmadal(false)} showmadal={showmadal}>
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="flex flex-col gap-[15px]"
+        >
+          <Controller
+            name="name"
+            control={control}
+            render={({ field }) => (
+              <Input
+                size="large"
+                {...field}
+                addonBefore={<i className="fa-solid fa-user text-color"></i>}
+              />
+            )}
+          />
+          <Controller
+            name="email"
+            control={control}
+            render={({ field }) => (
+              <Input
+                size="large"
+                {...field}
+                addonBefore={
+                  <i className="fa-solid fa-envelope  text-color"></i>
+                }
+              />
+            )}
+          />
+          <Controller
+            name="password"
+            control={control}
+            render={({ field }) => (
+              <Input
+                {...field}
+                size="large"
+                addonBefore={<i className="fa-solid fa-lock  text-color"></i>}
+              />
+            )}
+          />
+          <Button htmlType="submit">Send</Button>
+        </form>
+      </Madal>
     </div>
   );
 };

@@ -4,11 +4,14 @@ import App from "./App";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import "./i18.next";
+import Thema from "./Theme";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <Thema>
+        <App />
+      </Thema>
     </BrowserRouter>
   </React.StrictMode>
 );

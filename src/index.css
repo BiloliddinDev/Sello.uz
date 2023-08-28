@@ -19,3 +19,7 @@ body {
 .ant-input-search-button:hover {
   background-color: #0e9d94 !important;
 }
+
+.ant-btn-primary {
+  display: none;
+}
